@@ -1,0 +1,30 @@
+[2.219s] Invoking command in '/home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/planner': PYTHONPATH=/home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/install/planner/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/planner build --build-base /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/build install --record /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/install.log --single-version-externally-managed install_data
+[2.914s] running egg_info
+[2.914s] writing ../build/planner/planner.egg-info/PKG-INFO
+[2.914s] writing dependency_links to ../build/planner/planner.egg-info/dependency_links.txt
+[2.914s] writing entry points to ../build/planner/planner.egg-info/entry_points.txt
+[2.914s] writing requirements to ../build/planner/planner.egg-info/requires.txt
+[2.914s] writing top-level names to ../build/planner/planner.egg-info/top_level.txt
+[2.918s] reading manifest file '../build/planner/planner.egg-info/SOURCES.txt'
+[2.937s] writing manifest file '../build/planner/planner.egg-info/SOURCES.txt'
+[2.940s] running build
+[2.940s] running build_py
+[2.946s] copying planner/matrix_utils.py -> /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/build/lib/planner
+[2.952s] copying planner/planner_node.py -> /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/build/lib/planner
+[2.952s] copying planner/dijkstra.py -> /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/build/lib/planner
+[2.952s] running install
+[2.952s] running install_lib
+[2.954s] copying /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/build/lib/planner/matrix_utils.py -> /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/install/planner/lib/python3.10/site-packages/planner
+[2.954s] copying /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/build/lib/planner/planner_node.py -> /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/install/planner/lib/python3.10/site-packages/planner
+[2.954s] copying /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/build/lib/planner/dijkstra.py -> /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/install/planner/lib/python3.10/site-packages/planner
+[2.971s] byte-compiling /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/install/planner/lib/python3.10/site-packages/planner/matrix_utils.py to matrix_utils.cpython-310.pyc
+[2.971s] byte-compiling /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/install/planner/lib/python3.10/site-packages/planner/planner_node.py to planner_node.cpython-310.pyc
+[2.971s] byte-compiling /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/install/planner/lib/python3.10/site-packages/planner/dijkstra.py to dijkstra.cpython-310.pyc
+[2.971s] running install_data
+[2.991s] running install_egg_info
+[2.991s] removing '/home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/install/planner/lib/python3.10/site-packages/planner-0.0.0-py3.10.egg-info' (and everything under it)
+[2.991s] Copying ../build/planner/planner.egg-info to /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/install/planner/lib/python3.10/site-packages/planner-0.0.0-py3.10.egg-info
+[2.995s] running install_scripts
+[3.045s] Installing planner_node script to /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/install/planner/lib/planner
+[3.104s] writing list of installed files to '/home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/install.log'
+[3.105s] Invoked command in '/home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/planner' returned '0': PYTHONPATH=/home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/install/planner/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/planner build --build-base /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/build install --record /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/install.log --single-version-externally-managed install_data
