@@ -138,3 +138,7 @@ def q_learning_plan(
         s = s2
 
     return []
+
+
+# Backward/short alias (used in local tests)
+q_learning = q_learning_plan
