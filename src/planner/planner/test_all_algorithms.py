@@ -1,12 +1,19 @@
-from planner.test_a_star import main as test_a_star
-from planner.test_dijkstra import main as test_dijkstra
-from planner.test_q_learning import main as test_q_learning
+from planner.representation_env import load_matrix_from_sdf
+from planner.dijkstra import dijkstra
+from planner.a_star import a_star
+from planner.q_learning import q_learning_plan
 
-def main() -> None:
-    test_a_star()
-    test_dijkstra()
-    test_q_learning()
-    print("\nAll tests passed.")
+SDF_PATH = "../../../env/env.sdf"
 
-if __name__ == "__main__":
-    main()
+matrix = load_matrix_from_sdf(SDF_PATH, clear_first=True)
+
+start = (1, 0)
+goal  = (6, 7)
+
+for name, fn in [
+    ("Dijkstra", dijkstra),
+    ("A*", a_star),
+    ("Q-learning", q_learning_plan),
+]:
+    path = fn(start, goal, matrix)
+    print(f"{name}: {'OK' if path else 'NO PATH'} | len={len(path) if path else 0}")

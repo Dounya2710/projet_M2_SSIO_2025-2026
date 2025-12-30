@@ -4,13 +4,13 @@ Ce projet vise à concevoir et tester des algorithmes de planification de trajec
 La planification repose sur une **représentation matricielle de l’environnement**
 extraite du monde Gazebo.
 
---
+---
 
 ## Accès aux fichiers
 
 Google Drive: https://drive.google.com/drive/folders/1a9tsptmZjvx-htNuJZf33DHj_fXNanC6?usp=sharing
 
---
+---
 
 ## Pré-requis
 
@@ -21,9 +21,9 @@ Google Drive: https://drive.google.com/drive/folders/1a9tsptmZjvx-htNuJZf33DHj_f
 - Python ≥ 3.10
 - Colcon
 
---
+---
 
-## 1️) Initialisation de l’environnement ROS 2
+## 1) Initialisation de l’environnement ROS 2
 
 Attention, à faire avant chaque utilisation de ROS 2 (nouveau terminal) :
 
