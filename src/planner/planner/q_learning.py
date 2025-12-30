@@ -1,144 +1,137 @@
 import random
-from typing import Dict, List, Tuple
+from typing import Dict, List, Tuple, Union
 
-Cell = Tuple[int, int]  # (i, j)
-Action = int            # 0:up 1:down 2:left 3:right
+Cell2D = Tuple[int, int]
+Cell3D = Tuple[int, int, int]
+Cell = Union[Cell2D, Cell3D]
 
-ACTIONS = [0, 1, 2, 3]
-DELTA = {
-    0: (-1, 0),
-    1: (1, 0),
-    2: (0, -1),
-    3: (0, 1),
-}
+# Actions: (di, dj, dk)
+ACTIONS_2D = [(-1, 0, 0), (1, 0, 0), (0, -1, 0), (0, 1, 0)]
+ACTIONS_3D = ACTIONS_2D + [(0, 0, -1), (0, 0, 1)]
 
 
-def _in_bounds(cell: Cell, grid_size: int) -> bool:
-    i, j = cell
-    return 0 <= i < grid_size and 0 <= j < grid_size
+def _grid_dims(matrix) -> Tuple[int, int, int]:
+    n_i = len(matrix)
+    n_j = len(matrix[0]) if n_i else 0
+    first = matrix[0][0] if (n_i and n_j) else 0
+    if isinstance(first, list):
+        n_k = len(first)
+    else:
+        n_k = 1
+    return n_i, n_j, n_k
 
 
-def _is_free(cell: Cell, matrix: List[List[int]]) -> bool:
-    i, j = cell
-    return matrix[i][j] == 0
+def _normalize_cell(cell: Cell) -> Cell3D:
+    if len(cell) == 2:
+        return int(cell[0]), int(cell[1]), 0
+    if len(cell) == 3:
+        return int(cell[0]), int(cell[1]), int(cell[2])
+    raise ValueError(f"cell doit être (i,j) ou (i,j,k), reçu: {cell}")
 
 
-def _step(cell: Cell, action: Action, matrix: List[List[int]]) -> Tuple[Cell, float, bool]:
-    """
-    Applique une action.
-    - si on sort ou obstacle => on reste sur place et pénalité.
-    - reward: -1 par pas, +100 si goal (géré ailleurs), -10 si collision.
-    """
-    grid_size = len(matrix)
-    di, dj = DELTA[action]
-    nxt = (cell[0] + di, cell[1] + dj)
+def _in_bounds(s: Cell3D, dims: Tuple[int, int, int]) -> bool:
+    i, j, k = s
+    ni, nj, nk = dims
+    return 0 <= i < ni and 0 <= j < nj and 0 <= k < nk
 
-    # tentative de déplacement
-    if not _in_bounds(nxt, grid_size) or not _is_free(nxt, matrix):
-        return cell, -10.0, False  # collision / mur => pénalité, pas terminal
-    return nxt, -1.0, False
+
+def _is_free(s: Cell3D, matrix) -> bool:
+    i, j, k = s
+    if _grid_dims(matrix)[2] == 1:
+        return matrix[i][j] == 0
+    return matrix[i][j][k] == 0
+
+
+def _step(state: Cell3D, action: Tuple[int, int, int], matrix) -> Cell3D:
+    dims = _grid_dims(matrix)
+    ni, nj, nk = dims
+    i, j, k = state
+    di, dj, dk = action
+    ns = (i + di, j + dj, k + dk)
+    if not _in_bounds(ns, dims):
+        return state
+    if not _is_free(ns, matrix):
+        return state
+    return ns
 
 
 def q_learning_plan(
     start: Cell,
     goal: Cell,
-    matrix: List[List[int]],
-    episodes: int = 4000,
+    matrix,
+    *,
+    episodes: int = 800,
     alpha: float = 0.2,
     gamma: float = 0.95,
-    epsilon: float = 0.2,
-    max_steps_per_episode: int = 200,
-    max_steps_extract: int = 200,
-) -> List[Cell]:
+    epsilon: float = 0.25,
+    max_steps: int = 800,
+) -> List[Cell3D]:
+    """Learn a simple Q-learning policy on the fly and extract a greedy path.
+
+    Notes:
+      - This is meant for *demo/testing* (not a production RL planner).
+      - For a ground robot, keep k=0 and a 1-layer grid.
     """
-    Entraîne un Q-learning tabulaire puis extrait un chemin start->goal.
-    Retourne [] si non trouvé / boucle.
-    """
-    if not matrix:
-        return []
-    grid_size = len(matrix)
+    s0 = _normalize_cell(start)
+    g = _normalize_cell(goal)
+    dims = _grid_dims(matrix)
 
-    if not _in_bounds(start, grid_size) or not _in_bounds(goal, grid_size):
+    if not _in_bounds(s0, dims) or not _in_bounds(g, dims):
         return []
-    if not _is_free(start, matrix) or not _is_free(goal, matrix):
+    if not _is_free(s0, matrix) or not _is_free(g, matrix):
         return []
 
-    # Q-table: dict[(cell, action)] -> value
-    Q: Dict[Tuple[Cell, Action], float] = {}
+    actions = ACTIONS_3D if dims[2] > 1 else ACTIONS_2D
 
-    def q(cell: Cell, action: Action) -> float:
-        return Q.get((cell, action), 0.0)
+    # Q[(state, action_index)] = value
+    Q: Dict[Tuple[Cell3D, int], float] = {}
 
-    def best_action(cell: Cell) -> Action:
-        # argmax_a Q(s,a)
-        vals = [(q(cell, a), a) for a in ACTIONS]
-        vals.sort(reverse=True, key=lambda x: x[0])
-        return vals[0][1]
+    def reward(state: Cell3D) -> float:
+        if state == g:
+            return 100.0
+        return -1.0  # step cost
 
     # Training
     for _ in range(episodes):
-        s = start
-
-        for _step_idx in range(max_steps_per_episode):
+        state = s0
+        for _t in range(max_steps):
+            if state == g:
+                break
             # epsilon-greedy
             if random.random() < epsilon:
-                a = random.choice(ACTIONS)
+                a_idx = random.randrange(len(actions))
             else:
-                a = best_action(s)
+                # pick best action
+                vals = [Q.get((state, idx), 0.0) for idx in range(len(actions))]
+                a_idx = max(range(len(actions)), key=lambda idx: vals[idx])
 
-            s2, r, _ = _step(s, a, matrix)
+            ns = _step(state, actions[a_idx], matrix)
+            r = reward(ns)
 
-            # bonus si on atteint le goal
-            if s2 == goal:
-                r = 100.0
+            # next best
+            next_vals = [Q.get((ns, idx), 0.0) for idx in range(len(actions))]
+            best_next = max(next_vals) if next_vals else 0.0
 
-            # update
-            a2 = best_action(s2)
-            td_target = r + gamma * q(s2, a2)
-            td_error = td_target - q(s, a)
-            Q[(s, a)] = q(s, a) + alpha * td_error
+            old = Q.get((state, a_idx), 0.0)
+            Q[(state, a_idx)] = old + alpha * (r + gamma * best_next - old)
 
-            s = s2
-            if s == goal:
-                break
+            state = ns
 
-        # petit decay (optionnel) pour stabiliser
-        epsilon = max(0.05, epsilon * 0.999)
-
-    # Extract path from learned policy
-    path = [start]
-    visited = set([start])
-    s = start
-
-    for _ in range(max_steps_extract):
-        if s == goal:
+    # Extract greedy path
+    path: List[Cell3D] = [s0]
+    state = s0
+    seen = {state}
+    for _ in range(max_steps):
+        if state == g:
             return path
-
-        a = best_action(s)
-        s2, _, _ = _step(s, a, matrix)
-
-        # si bloqué (action mène nulle part), on tente une action alternative
-        if s2 == s:
-            alt = ACTIONS[:]
-            random.shuffle(alt)
-            moved = False
-            for a_alt in alt:
-                t, _, _ = _step(s, a_alt, matrix)
-                if t != s:
-                    s2 = t
-                    moved = True
-                    break
-            if not moved:
-                return []
-
-        if s2 in visited:
-            return []  # boucle => échec extraction
-        visited.add(s2)
-        path.append(s2)
-        s = s2
+        vals = [Q.get((state, idx), 0.0) for idx in range(len(actions))]
+        a_idx = max(range(len(actions)), key=lambda idx: vals[idx])
+        ns = _step(state, actions[a_idx], matrix)
+        if ns == state or ns in seen:
+            # stuck
+            break
+        path.append(ns)
+        seen.add(ns)
+        state = ns
 
     return []
-
-
-# Backward/short alias (used in local tests)
-q_learning = q_learning_plan
