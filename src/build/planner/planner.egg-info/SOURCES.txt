@@ -9,10 +9,17 @@ setup.py
 ../build/planner/planner.egg-info/top_level.txt
 ../build/planner/planner.egg-info/zip-safe
 planner/__init__.py
+planner/_test_helpers.py
+planner/a_star.py
 planner/dijkstra.py
 planner/matrix_utils.py
 planner/planner_node.py
+planner/q_learning.py
 planner/representation_env.py
+planner/test_a_star.py
+planner/test_all_algorithms.py
+planner/test_dijkstra.py
+planner/test_q_learning.py
 resource/planner
 test/test_copyright.py
 test/test_flake8.py

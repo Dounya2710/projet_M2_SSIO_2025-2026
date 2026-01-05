@@ -1,0 +1,24 @@
+[0.439s] Invoking command in '/home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/planner': PYTHONPATH=/home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/install/planner/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/planner build --build-base /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/build install --record /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/install.log --single-version-externally-managed install_data
+[0.603s] running egg_info
+[0.604s] writing ../build/planner/planner.egg-info/PKG-INFO
+[0.604s] writing dependency_links to ../build/planner/planner.egg-info/dependency_links.txt
+[0.604s] writing entry points to ../build/planner/planner.egg-info/entry_points.txt
+[0.604s] writing requirements to ../build/planner/planner.egg-info/requires.txt
+[0.604s] writing top-level names to ../build/planner/planner.egg-info/top_level.txt
+[0.606s] reading manifest file '../build/planner/planner.egg-info/SOURCES.txt'
+[0.609s] writing manifest file '../build/planner/planner.egg-info/SOURCES.txt'
+[0.610s] running build
+[0.610s] running build_py
+[0.610s] copying planner/planner_node.py -> /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/build/lib/planner
+[0.610s] running install
+[0.611s] running install_lib
+[0.612s] copying /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/build/lib/planner/planner_node.py -> /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/install/planner/lib/python3.10/site-packages/planner
+[0.612s] byte-compiling /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/install/planner/lib/python3.10/site-packages/planner/planner_node.py to planner_node.cpython-310.pyc
+[0.613s] running install_data
+[0.613s] running install_egg_info
+[0.614s] removing '/home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/install/planner/lib/python3.10/site-packages/planner-0.0.0-py3.10.egg-info' (and everything under it)
+[0.614s] Copying ../build/planner/planner.egg-info to /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/install/planner/lib/python3.10/site-packages/planner-0.0.0-py3.10.egg-info
+[0.615s] running install_scripts
+[0.628s] Installing planner_node script to /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/install/planner/lib/planner
+[0.628s] writing list of installed files to '/home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/install.log'
+[0.644s] Invoked command in '/home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/planner' returned '0': PYTHONPATH=/home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/install/planner/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/planner build --build-base /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/build install --record /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/install.log --single-version-externally-managed install_data

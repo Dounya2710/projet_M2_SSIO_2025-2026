@@ -1,0 +1,54 @@
+[1.172s] Invoking command in '/home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/planner': PYTHONPATH=/home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/install/planner/lib/python3.10/site-packages: /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/planner build --build-base /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/build install --record /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/install.log --single-version-externally-managed install_data
+[1.533s] running egg_info
+[1.533s] writing ../build/planner/planner.egg-info/PKG-INFO
+[1.536s] writing dependency_links to ../build/planner/planner.egg-info/dependency_links.txt
+[1.536s] writing entry points to ../build/planner/planner.egg-info/entry_points.txt
+[1.536s] writing requirements to ../build/planner/planner.egg-info/requires.txt
+[1.536s] writing top-level names to ../build/planner/planner.egg-info/top_level.txt
+[1.536s] reading manifest file '../build/planner/planner.egg-info/SOURCES.txt'
+[1.540s] writing manifest file '../build/planner/planner.egg-info/SOURCES.txt'
+[1.540s] running build
+[1.540s] running build_py
+[1.540s] copying planner/_test_helpers.py -> /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/build/lib/planner
+[1.540s] copying planner/matrix_utils.py -> /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/build/lib/planner
+[1.542s] copying planner/representation_env.py -> /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/build/lib/planner
+[1.542s] copying planner/planner_node.py -> /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/build/lib/planner
+[1.542s] copying planner/test_q_learning.py -> /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/build/lib/planner
+[1.543s] copying planner/q_learning.py -> /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/build/lib/planner
+[1.543s] copying planner/test_a_star.py -> /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/build/lib/planner
+[1.544s] copying planner/test_dijkstra.py -> /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/build/lib/planner
+[1.545s] copying planner/a_star.py -> /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/build/lib/planner
+[1.545s] copying planner/test_all_algorithms.py -> /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/build/lib/planner
+[1.546s] copying planner/dijkstra.py -> /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/build/lib/planner
+[1.548s] running install
+[1.553s] running install_lib
+[1.556s] copying /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/build/lib/planner/_test_helpers.py -> /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/install/planner/lib/python3.10/site-packages/planner
+[1.556s] copying /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/build/lib/planner/matrix_utils.py -> /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/install/planner/lib/python3.10/site-packages/planner
+[1.556s] copying /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/build/lib/planner/representation_env.py -> /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/install/planner/lib/python3.10/site-packages/planner
+[1.556s] copying /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/build/lib/planner/planner_node.py -> /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/install/planner/lib/python3.10/site-packages/planner
+[1.556s] copying /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/build/lib/planner/test_q_learning.py -> /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/install/planner/lib/python3.10/site-packages/planner
+[1.556s] copying /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/build/lib/planner/q_learning.py -> /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/install/planner/lib/python3.10/site-packages/planner
+[1.556s] copying /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/build/lib/planner/test_a_star.py -> /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/install/planner/lib/python3.10/site-packages/planner
+[1.556s] copying /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/build/lib/planner/test_dijkstra.py -> /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/install/planner/lib/python3.10/site-packages/planner
+[1.556s] copying /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/build/lib/planner/a_star.py -> /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/install/planner/lib/python3.10/site-packages/planner
+[1.556s] copying /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/build/lib/planner/test_all_algorithms.py -> /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/install/planner/lib/python3.10/site-packages/planner
+[1.556s] copying /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/build/lib/planner/dijkstra.py -> /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/install/planner/lib/python3.10/site-packages/planner
+[1.558s] byte-compiling /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/install/planner/lib/python3.10/site-packages/planner/_test_helpers.py to _test_helpers.cpython-310.pyc
+[1.558s] byte-compiling /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/install/planner/lib/python3.10/site-packages/planner/matrix_utils.py to matrix_utils.cpython-310.pyc
+[1.560s] byte-compiling /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/install/planner/lib/python3.10/site-packages/planner/representation_env.py to representation_env.cpython-310.pyc
+[1.565s] byte-compiling /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/install/planner/lib/python3.10/site-packages/planner/planner_node.py to planner_node.cpython-310.pyc
+[1.584s] byte-compiling /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/install/planner/lib/python3.10/site-packages/planner/test_q_learning.py to test_q_learning.cpython-310.pyc
+[1.584s] byte-compiling /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/install/planner/lib/python3.10/site-packages/planner/q_learning.py to q_learning.cpython-310.pyc
+[1.584s] byte-compiling /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/install/planner/lib/python3.10/site-packages/planner/test_a_star.py to test_a_star.cpython-310.pyc
+[1.584s] byte-compiling /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/install/planner/lib/python3.10/site-packages/planner/test_dijkstra.py to test_dijkstra.cpython-310.pyc
+[1.584s] byte-compiling /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/install/planner/lib/python3.10/site-packages/planner/a_star.py to a_star.cpython-310.pyc
+[1.584s] byte-compiling /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/install/planner/lib/python3.10/site-packages/planner/test_all_algorithms.py to test_all_algorithms.cpython-310.pyc
+[1.584s] byte-compiling /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/install/planner/lib/python3.10/site-packages/planner/dijkstra.py to dijkstra.cpython-310.pyc
+[1.584s] running install_data
+[1.584s] running install_egg_info
+[1.584s] removing '/home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/install/planner/lib/python3.10/site-packages/planner-0.0.0-py3.10.egg-info' (and everything under it)
+[1.584s] Copying ../build/planner/planner.egg-info to /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/install/planner/lib/python3.10/site-packages/planner-0.0.0-py3.10.egg-info
+[1.618s] running install_scripts
+[1.636s] Installing planner_node script to /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/install/planner/lib/planner
+[1.638s] writing list of installed files to '/home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/install.log'
+[1.666s] Invoked command in '/home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/planner' returned '0': PYTHONPATH=/home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/install/planner/lib/python3.10/site-packages: /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/planner build --build-base /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/build install --record /home/vboxuser/Documents/projet_M2_SSIO_2025-2026/src/build/planner/install.log --single-version-externally-managed install_data

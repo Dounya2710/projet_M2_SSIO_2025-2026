@@ -1,5 +1,6 @@
 import rclpy
 from rclpy.node import Node
+from rclpy.qos import QoSProfile, HistoryPolicy, ReliabilityPolicy, DurabilityPolicy
 
 from nav_msgs.msg import Path
 from geometry_msgs.msg import PoseStamped
@@ -18,8 +19,9 @@ class PlannerNode(Node):
         # Paramètre pour choisir l'algo: dijkstra | astar | qlearning
         self.declare_parameter("algo", "dijkstra")
         self.algo = self.get_parameter("algo").get_parameter_value().string_value
-
-        self.path_pub = self.create_publisher(Path, "/planned_path", 10)
+        
+        qos = QoSProfile(history=HistoryPolicy.KEEP_LAST, depth=1, reliability=ReliabilityPolicy.RELIABLE, durability=DurabilityPolicy.TRANSIENT_LOCAL)
+        self.path_pub = self.create_publisher(Path, "/planner_path", qos)
 
         # Start/goal in grid coordinates (i, j, k)
         # For a ground robot: k=0
@@ -46,6 +48,7 @@ class PlannerNode(Node):
             pose.pose.position.y = float(y)
             pose.pose.position.z = float(z)
             pose.pose.orientation.w = 1.0
+            pose.header.frame_id = "odom"
             path_msg.poses.append(pose)
 
         return path_msg
