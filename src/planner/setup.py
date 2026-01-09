@@ -24,6 +24,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
+        'dijkstra_turtlebot_test = planner.dijkstra_turtlebot_test:main',
         'planner_node = planner.planner_node:main',
         ],
     },

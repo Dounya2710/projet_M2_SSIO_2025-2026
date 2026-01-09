@@ -12,6 +12,7 @@ planner/__init__.py
 planner/_test_helpers.py
 planner/a_star.py
 planner/dijkstra.py
+planner/dijkstra_turtlebot_test.py
 planner/matrix_utils.py
 planner/planner_node.py
 planner/q_learning.py

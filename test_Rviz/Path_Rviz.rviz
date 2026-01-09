@@ -6,11 +6,10 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
+        - /Path1
+        - /TF1
         - /TF1/Frames1
-        - /TF1/Frames1/map1
-        - /TF1/Frames1/odom1
         - /TF1/Tree1
-        - /TF1/Tree1/map1
       Splitter Ratio: 0.5
     Tree Height: 599
   - Class: rviz_common/Selection
@@ -85,10 +84,122 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: false
+        base_link:
+          Value: false
+        bump_front_center:
+          Value: false
+        bump_front_left:
+          Value: false
+        bump_front_right:
+          Value: false
+        bump_left:
+          Value: false
+        bump_right:
+          Value: false
+        bumper:
+          Value: false
+        button_1:
+          Value: false
+        button_2:
+          Value: false
+        button_power:
+          Value: false
+        cliff_front_left:
+          Value: false
+        cliff_front_right:
+          Value: false
+        cliff_side_left:
+          Value: false
+        cliff_side_right:
+          Value: false
+        front_caster_link:
+          Value: false
+        front_left_bottom_weight_block:
+          Value: false
+        front_left_top_weight_block:
+          Value: false
+        front_left_tower_standoff:
+          Value: false
+        front_right_bottom_weight_block:
+          Value: false
+        front_right_top_weight_block:
+          Value: false
+        front_right_tower_standoff:
+          Value: false
+        green_buoy_link:
+          Value: false
+        halo_link:
+          Value: false
+        imu_link:
+          Value: false
+        ir_intensity_front_center_left:
+          Value: false
+        ir_intensity_front_center_right:
+          Value: false
+        ir_intensity_front_left:
+          Value: false
+        ir_intensity_front_right:
+          Value: false
+        ir_intensity_left:
+          Value: false
+        ir_intensity_right:
+          Value: false
+        ir_intensity_side_left:
+          Value: false
+        ir_omni:
+          Value: false
+        left_wheel:
+          Value: false
         map:
+          Value: true
+        mouse:
+          Value: false
+        oakd_camera_bracket:
+          Value: false
+        oakd_imu_frame:
+          Value: false
+        oakd_left_camera_frame:
+          Value: false
+        oakd_left_camera_optical_frame:
+          Value: false
+        oakd_link:
+          Value: false
+        oakd_rgb_camera_frame:
+          Value: false
+        oakd_rgb_camera_optical_frame:
+          Value: false
+        oakd_right_camera_frame:
+          Value: false
+        oakd_right_camera_optical_frame:
           Value: false
         odom:
           Value: true
+        rear_left_tower_standoff:
+          Value: false
+        rear_right_tower_standoff:
+          Value: false
+        red_buoy_link:
+          Value: false
+        right_wheel:
+          Value: false
+        rplidar_link:
+          Value: false
+        shell_link:
+          Value: false
+        std_dock_link:
+          Value: false
+        tower_sensor_plate:
+          Value: false
+        turtlebot4/oakd_rgb_camera_frame/rgbd_camera:
+          Value: false
+        turtlebot4/rplidar_link/rplidar:
+          Value: false
+        wheel_drop_left:
+          Value: false
+        wheel_drop_right:
+          Value: false
+        yellow_buoy_link:
+          Value: false
       Marker Scale: 1
       Name: TF
       Show Arrows: true
@@ -97,7 +208,106 @@ Visualization Manager:
       Tree:
         map:
           odom:
-            {}
+            base_link:
+              bump_front_center:
+                {}
+              bump_front_left:
+                {}
+              bump_front_right:
+                {}
+              bump_left:
+                {}
+              bump_right:
+                {}
+              bumper:
+                {}
+              button_1:
+                {}
+              button_2:
+                {}
+              button_power:
+                {}
+              cliff_front_left:
+                {}
+              cliff_front_right:
+                {}
+              cliff_side_left:
+                {}
+              cliff_side_right:
+                {}
+              front_caster_link:
+                {}
+              front_left_bottom_weight_block:
+                {}
+              front_left_top_weight_block:
+                {}
+              front_right_bottom_weight_block:
+                {}
+              front_right_top_weight_block:
+                {}
+              imu_link:
+                {}
+              ir_intensity_front_center_left:
+                {}
+              ir_intensity_front_center_right:
+                {}
+              ir_intensity_front_left:
+                {}
+              ir_intensity_front_right:
+                {}
+              ir_intensity_left:
+                {}
+              ir_intensity_right:
+                {}
+              ir_intensity_side_left:
+                {}
+              ir_omni:
+                {}
+              mouse:
+                {}
+              shell_link:
+                front_left_tower_standoff:
+                  {}
+                front_right_tower_standoff:
+                  {}
+                oakd_camera_bracket:
+                  oakd_link:
+                    oakd_imu_frame:
+                      {}
+                    oakd_left_camera_frame:
+                      oakd_left_camera_optical_frame:
+                        {}
+                    oakd_rgb_camera_frame:
+                      oakd_rgb_camera_optical_frame:
+                        turtlebot4/oakd_rgb_camera_frame/rgbd_camera:
+                          {}
+                    oakd_right_camera_frame:
+                      oakd_right_camera_optical_frame:
+                        {}
+                rear_left_tower_standoff:
+                  {}
+                rear_right_tower_standoff:
+                  {}
+                rplidar_link:
+                  turtlebot4/rplidar_link/rplidar:
+                    {}
+                tower_sensor_plate:
+                  {}
+              wheel_drop_left:
+                left_wheel:
+                  {}
+              wheel_drop_right:
+                right_wheel:
+                  {}
+            std_dock_link:
+              green_buoy_link:
+                {}
+              halo_link:
+                {}
+              red_buoy_link:
+                {}
+              yellow_buoy_link:
+                {}
       Update Interval: 0
       Value: true
   Enabled: true
@@ -146,25 +356,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 9.136276245117188
+      Distance: 20.65553855895996
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
-        Value: false
+        Value: true
       Focal Point:
         X: 0
         Y: 0
         Z: 0
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
-      Invert Z Axis: false
+      Invert Z Axis: true
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 1.2903977632522583
+      Pitch: 1.5547963380813599
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 6.258582592010498
+      Yaw: 0.0053985510021448135
     Saved:
       - Class: rviz_default_plugins/Orbit
         Distance: 10.636310577392578
@@ -186,6 +396,66 @@ Visualization Manager:
         Target Frame: <Fixed Frame>
         Value: Orbit (rviz)
         Yaw: 6.258582592010498
+      - Class: rviz_default_plugins/Orbit
+        Distance: 20.197399139404297
+        Enable Stereo Rendering:
+          Stereo Eye Separation: 0.05999999865889549
+          Stereo Focal Distance: 1
+          Swap Stereo Eyes: false
+          Value: true
+        Focal Point:
+          X: 0
+          Y: 0
+          Z: 0
+        Focal Shape Fixed Size: true
+        Focal Shape Size: 0.05000000074505806
+        Invert Z Axis: true
+        Name: Orbit
+        Near Clip Distance: 0.009999999776482582
+        Pitch: 1.2903977632522583
+        Target Frame: <Fixed Frame>
+        Value: Orbit (rviz)
+        Yaw: 6.258582592010498
+      - Class: rviz_default_plugins/Orbit
+        Distance: 20.65553855895996
+        Enable Stereo Rendering:
+          Stereo Eye Separation: 0.05999999865889549
+          Stereo Focal Distance: 1
+          Swap Stereo Eyes: false
+          Value: true
+        Focal Point:
+          X: 0
+          Y: 0
+          Z: 0
+        Focal Shape Fixed Size: true
+        Focal Shape Size: 0.05000000074505806
+        Invert Z Axis: true
+        Name: Orbit
+        Near Clip Distance: 0.009999999776482582
+        Pitch: 1.5547963380813599
+        Target Frame: <Fixed Frame>
+        Value: Orbit (rviz)
+        Yaw: 0.0053985510021448135
+      - Class: rviz_default_plugins/Orbit
+        Distance: 20.65553855895996
+        Enable Stereo Rendering:
+          Stereo Eye Separation: 0.05999999865889549
+          Stereo Focal Distance: 1
+          Swap Stereo Eyes: false
+          Value: true
+        Focal Point:
+          X: 0
+          Y: 0
+          Z: 0
+        Focal Shape Fixed Size: true
+        Focal Shape Size: 0.05000000074505806
+        Invert Z Axis: true
+        Name: Orbit
+        Near Clip Distance: 0.009999999776482582
+        Pitch: 1.5547963380813599
+        Target Frame: <Fixed Frame>
+        Value: Orbit (rviz)
+        Yaw: 0.0053985510021448135
 Window Geometry:
   Displays:
     collapsed: false
