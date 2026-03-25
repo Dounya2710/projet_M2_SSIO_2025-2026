@@ -1,0 +1,8 @@
+prefix=/home/user/catkin_ws/devel
+
+Name: tb3_td
+Description: Description of tb3_td
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

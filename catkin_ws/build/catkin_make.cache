@@ -1,0 +1,2 @@
+Simulateur_TB3/turtlebot3/turtlebot3:Simulateur_TB3/turtlebot3/turtlebot3_description:Simulateur_TB3/turtlebot3_bringup:Simulateur_TB3/turtlebot3_msgs:Simulateur_TB3/turtlebot3_simulations/turtlebot3_fake:Simulateur_TB3/turtlebot3_simulations/turtlebot3_gazebo:Simulateur_TB3/turtlebot3_simulations/turtlebot3_simulations:tb3_projet_ma:tb3_td:turtlebot3_navigation:turtlebot3_slam
+-DCATKIN_DEVEL_PREFIX=/home/user/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/user/catkin_ws/install -G Unix Makefiles
